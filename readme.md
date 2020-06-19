@@ -87,7 +87,7 @@ Comming Soon
 
 Please follow carefully the following steps
 
-1 - In your Mysql create and use a new database
+1 - In your Mysql create and use a new database (smartcode or any database name)
 
 ```bash
 create database smartcode;
@@ -100,25 +100,38 @@ use database smartcode;
 git clone https://github.com/Saikilito/smartcode-tickets.git
 ```
 
-3- install and run server
+3- Inside the server folder write an .env file with the necessary data to connect to the local database, use the .env.example file to guide you
 
 ```bash
 cd smartcode-tickets/server
+```
+
+```bash
+USERNAME_DB =
+PASSWORD_DB =
+DB_NAME =
+JWT_SECRET =
+```
+
+4- install and run server
+
+```bash
 yarn && yarn start
 ```
 
-4- insert data seeds in your database
+5- insert initial data necessary in your MySql database (TypeORM created the tables and relations for you with you ran the server )
 
 ```bash
 insert into tipo_usuario (nombre) values ("admin");
 insert into tipo_usuario (nombre) values ("user");
 ```
 
-5- install and run client
+6- install and run client
 
 ```bash
 cd smartcode-tickets/client
 yarn && yarn start
 ```
 
-Then open [http://localhost:4000/](http://localhost:4000/) to see the app.
+Then open [http://localhost:3000/](http://localhost:3000/) to see the client app.
+And use [http://localhost:4000/](http://localhost:4000/) for interact with the server
