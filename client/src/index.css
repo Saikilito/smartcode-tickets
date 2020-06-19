@@ -1,0 +1,98 @@
+.custom-card {
+  /*max-width: 400px;*/
+  position: relative;
+  margin-bottom: -3px;
+  box-shadow: 0px 6px 38px 0px rgba(0, 0, 0, 0.085);
+  will-change: box-shadow;
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  box-shadow: 0px 13px 38px 0px rgba(0, 0, 0, 0.15);
+}
+
+.custom-card .card-body {
+  padding-top: 65px;
+}
+
+.custom-card .card-cover {
+  position: relative;
+  background: none no-repeat center center / cover;
+  height: 140px;
+}
+
+.custom-card .card-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.custom-card .circle-image {
+  position: absolute;
+  background: none no-repeat center center / cover;
+  width: 90px;
+  height: 90px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.custom-card .circle-image:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 6px #fff;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 50%;
+}
+
+.custom-card .circle-image.circle-image-ticket {
+  background-color: gray !important;
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+  border-radius: 15%;
+}
+
+.custom-card .circle-image.circle-image-ticket::before {
+  border-radius: 15%;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-card .card-cover {
+    background: none;
+    height: 0;
+  }
+
+  .custom-card .circle-image {
+    position: relative;
+    bottom: inherit;
+    top: 20px;
+    left: 10px;
+    transform: none;
+  }
+
+  .custom-card .circle-image:before {
+    box-shadow: none;
+  }
+
+  .custom-card .card-body {
+    padding-top: 20px;
+    padding-left: 120px;
+  }
+}
+
+/*-----------*/
+/*--- 404 ---*/
+/*-----------*/
+.image404 {
+  max-width: 100vw;
+}
