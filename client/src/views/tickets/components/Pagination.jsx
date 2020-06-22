@@ -2,8 +2,6 @@ import React from "react";
 import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact";
 
 const PaginationPage = ({ pagination, setPagination, total }) => {
-  console.log("total", total);
-  console.log(pagination);
   return (
     <MDBRow>
       <MDBCol>

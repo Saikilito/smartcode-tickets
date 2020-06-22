@@ -1,10 +1,9 @@
--- 1. first create your database
+-- 1. Crea tu database
 CREATE DATABASE your_database_password;
-
--- 2. run server (example: npm start)
-    -- the ORM will create the necessary tables and entities
-
--- 3. within mysql run the follow scripts
 use your_database_password;
-insert into tipo_usuario (nombre) values ("admin");
-insert into tipo_usuario (nombre) values ("user");
+
+-- 2. Corre tu servidor en modo desarrollo (por ejemplo yarn dev)
+    -- El Servidor creara por ti las tablas iniciales
+    -- El Servidor insertará los datos necesarios para iniciar la app tambien
+
+-- 3. Usa email: "admin@smartcode.com" and password: "123456" para logearte como administrador

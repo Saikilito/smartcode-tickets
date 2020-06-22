@@ -1,6 +1,8 @@
 import { createConnection } from "typeorm";
 import path from "path";
 
+import { UseQuery } from "../helpers";
+
 class TypeORM {
   static init = async () => {
     try {
@@ -14,6 +16,9 @@ class TypeORM {
         synchronize: true,
         entities: [path.join(__dirname, "../entity/**/*.ts")],
       });
+
+      await UseQuery.initDefaultData();
+
       console.info(`Database connected successfully`);
     } catch (error) {
       console.error(error);

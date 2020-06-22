@@ -86,7 +86,6 @@ const Users = () => {
    * @description Use for view all tickets
    */
   const handleViewAll = () => {
-    console.log("click", usersCopy);
     setUsers(usersCopy);
   };
 

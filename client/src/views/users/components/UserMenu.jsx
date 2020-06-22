@@ -4,7 +4,6 @@ const UserMenu = ({ selectOptions, handleViewAll, handleSearchUsers }) => {
   const [id, setId] = useState(0);
   const handleChange = (e) => {
     const idInput = e.target.value;
-    console.log("buh1", idInput);
     setId((id) => idInput);
   };
   return (

@@ -6,68 +6,65 @@
   </a>
 
   <h1 align="center">
-	Smartcode Tickets Manager
+	Smartcode Administrador de tickets
   </h1>
 
   <p align="center">
-    Dynamically rendering a simple manager of users and tickets CRUD
+    Renderiza dinamicamente un administrador de usuarios y tickets (CRUD)
     <br />
 	  🖊️    
     🐞
-    <a href="https://github.com/Saikilito/smartcode-tickets/">Report a Bug</a>
+    <a href="https://github.com/Saikilito/smartcode-tickets/">Reporta un Bug</a>
     🙋‍♂
-    <a href="https://github.com/Saikilito/smartcode-tickets/">Request Feature</a>
+    <a href="https://github.com/Saikilito/smartcode-tickets/">Envia una carácteristica</a>
   </p>
 </p>
     <p align="center">
     <img src="https://i.ibb.co/fGtx5ng/welcome.jpg"/>
     </p>
 
-# The Project
+# El proyecto
 
-The project consists of an application that discriminates between administrators and users, between them they can request tickets but only the adrministrator can edit users, edit, delete tickets and even other users.
+El proyecto consiste de una aplicación que discrimina entre administradores y usuarios, ambos tipo de usuarios pueden pedir tickets pero solamente el administrador puede editar y borrar tickets o gestionar otros usuarios.
 
-Based in these requirements
+**Basado en los siguientes requerimientos:**
 
-- You must create an app in React + nodejs+ MySql(or other) in which you can register and log in **(without password recovery)** and in which there are two user profiles: Administrator and User.
-- The administrator profile has only one table to manage tickets (Crud) where they can be assigned to users.
-- The user profile only has a list of tickets assigned to it and a button to request them (set the order_ticket).
-- The users login must discriminate and redirect according to their profile.
+- Crear una app en React + Nodejs + MySql (o algun otro) donde puedas registrar y logearte **(sin recuperar contraseña)**, además deben haber dos tipos de usuarios: administrador y usuario.
+- EL perfil de administador tendrá una tabla para administrar tickets (CRUD) y pueden ser asignados a usuarios.
+- El perfil de usuarios solamente tiene una lista de tickets asignados y un boton para pedirlos (crear un boton para pedir lo tickets).
+- La app debe discriminar y redirigir de acuerdo a su perfil.
 
-- The project has 3 Tables:
+- El proyecto tendra tres tablas:
 
 1. usuarios: id, id_tipouser, nombre, mail, pass
 2. ticket: id , id_user , ticket_pedido
 3. tipo_usuario: id, nombre
 
-- Async calls to external server
-- Object Oriented Programming
-- ES6 syntax
-- Export/import ES6+ notation
+# Características
 
-# Features
+- Usa ReactJS Framework
+- Usa Nodejs basado en Typescript
+- Usa TypeORM ORM para conectar a MySQL
+- Usa Bootstrap 4
+- Usa JWT Authorization (Para proteger las rutas del server y las sesiones de usuario)
+- Conecta a la API usando `async/await`
+- Diseño responsivo
+- Programación basa en objetos
+- Sintaxis ES6
+- Notación Export/import ES6+
 
-- Basic VanillaJS app with a single script or few commands
-- ReactJS Framework
-- Nodejs based on typescript
-- TypeORM ORM for connect a Mysql
-- connected an API using `async/await`
-- Bootstrap 4
-- JWT Authorization (routes protected and login token)
-- Mobile Optimized
-
-# Built With
+# Construido con
 
 - Create React App (CRA)
 - React-Router-Dom
 - `yarn`
-- `vscode` with prettier extension
+- `vscode` con las extensión de prettier
 - Windows 10
-- Love and Passion for code
+- Amor y pasión por el código
 
 # Live Demo
 
-Comming Soon
+Pronto una version envivo.
 
 <p align="center">
     <img src="https://i.ibb.co/L0hsPZ9/mobile-2.jpg"/>
@@ -75,32 +72,33 @@ Comming Soon
     <img src="https://i.ibb.co/yXrqmBS/c1.jpg"/>
 </p>
 
-## Prerequisites
+## Prerequisitos
 
 - `yarn` 1.21.1 +
 - `node` 11.15 +
 - `mysql +8.0`
-- A Text Editor like VSCode
-- A browser like Firefox or Chrome
+- Un editor de texto como `VSCode`
+- Un navegador como `Firefox` o `Chrome`
 
-## Quick Start
+## Iniciarlo
 
-Please follow carefully the following steps
+Para iniciar esta app (DEV MODE) por favor siga cuidadosamente los siguiente pasos:
 
-1 - In your Mysql create and use a new database (smartcode or any database name)
+1 - Crea en tu MySQL una base de datos (smartcode puede ser un nombre de ejemplo)
 
 ```bash
 create database smartcode;
-use database smartcode;
+use smartcode;
 ```
 
 2 - git clone
 
 ```bash
 git clone https://github.com/Saikilito/smartcode-tickets.git
+cd smartcode-tickets
 ```
 
-3- Inside the server folder write an .env file with the necessary data to connect to the local database, use the .env.example file to guide you
+3- Dentro de la carpeta `server` escribe una archivo `.env` con la información necesaria para conectarse a la base de datos, usa el archivo `.env.example` para guiarte
 
 ```bash
 cd smartcode-tickets/server
@@ -113,25 +111,23 @@ DB_NAME =
 JWT_SECRET =
 ```
 
-4- install and run server
+PD: La variable JWT_SECRET recibe un `string` que desees colocar, este se usará como firma para garantizar los hash que protegen las rutas.
+
+4- instala y corre el servidor (DEV MODE)
 
 ```bash
-yarn && yarn start
+yarn
+yarn dev
 ```
 
-5- insert initial data necessary in your MySql database (TypeORM created the tables and relations for you with you ran the server )
-
-```bash
-insert into tipo_usuario (nombre) values ("admin");
-insert into tipo_usuario (nombre) values ("user");
-```
-
-6- install and run client
+5- instalar y corre el cliente
 
 ```bash
 cd smartcode-tickets/client
 yarn && yarn start
 ```
 
-Then open [http://localhost:3000/](http://localhost:3000/) to see the client app.
-And use [http://localhost:4000/](http://localhost:4000/) for interact with the server
+Abre el servidor en [http://localhost:3000/](http://localhost:3000/) Para ver el cliente.
+Usa [http://localhost:4000/](http://localhost:4000/) para interactuar con el server
+
+PD: Usa email: "admin@smartcode.com" y password: "123456" para logearte como administrador

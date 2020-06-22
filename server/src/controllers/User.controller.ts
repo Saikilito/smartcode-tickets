@@ -93,7 +93,6 @@ class UserController extends CRUD {
       }
 
       const userFound = await getRepository(UserEntity).findOne({ mail: req.body.mail });
-
       if (!userFound) {
         return res.status(404).json({
           ok: false,

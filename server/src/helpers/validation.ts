@@ -58,6 +58,14 @@ const validation = {
       return schema.validate(data);
     },
   },
+  userType: {
+    createUserType: (data: Ticket) => {
+      const schema = Joi.object({
+        nombre: Joi.string().required(),
+      });
+      return schema.validate(data);
+    },
+  },
 };
 
 type User = {

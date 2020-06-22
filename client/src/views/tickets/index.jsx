@@ -146,7 +146,6 @@ const Tickets = () => {
   };
 
   const handleViewAll = () => {
-    console.log(ticketsCopy);
     setTickets(ticketsCopy);
   };
 
@@ -173,7 +172,7 @@ const Tickets = () => {
           <div className="row">
             {tickets && tickets.length > 0 ? (
               tickets.map((e, i) => {
-                if (i > pagination * maxPerPage && i <= pagination * maxPerPage + maxPerPage) {
+                if (i >= pagination * maxPerPage && i <= pagination * maxPerPage + maxPerPage) {
                   return (
                     <div key={e.id} className="col-12 col-md-6 col-xl-4">
                       <Ticket

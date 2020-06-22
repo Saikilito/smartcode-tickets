@@ -13,7 +13,7 @@ const Signin = () => {
   if (!user && token) {
     const goodDecoded = jwtDecode(token);
     if (goodDecoded) {
-      loginToken(goodDecoded);
+      return loginToken(goodDecoded);
     }
   }
   if (user) {

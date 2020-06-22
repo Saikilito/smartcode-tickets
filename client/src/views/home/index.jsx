@@ -25,7 +25,7 @@ const Home = () => {
       setTickets([...ticketsArray]);
     }
     fetcherEffect();
-  }, []);
+  }, [user]);
 
   /**
    * @description Send a new post request for order a new ticket

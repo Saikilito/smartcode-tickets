@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
   function logout() {
     setUser(null);
     window.localStorage.clear();
-    history.push("/signin");
+    return history.push("/signin");
   }
 
   async function register(user) {
@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
 
     setUser({ ...userResponse, rol: nombre });
 
-    history.push("/home");
+    return history.push("/home");
   }
 
   function gooUser(user) {
